@@ -13,6 +13,7 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
 import android.view.Gravity
+import android.view.View
 import android.graphics.Typeface
 import android.content.Context
 
@@ -24,7 +25,7 @@ class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val root = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL; setPadding(28, 32, 28, 24); layoutDirection = LinearLayout.RTL }
+        val root = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL; setPadding(28, 32, 28, 24); layoutDirection = View.LAYOUT_DIRECTION_RTL }
         val title = TextView(this).apply { text = "یار همراه"; textSize = 28f; typeface = Typeface.DEFAULT_BOLD; gravity = Gravity.CENTER; setPadding(0,0,0,20) }
         status = TextView(this).apply { text = "اطلاعات فقط با انتخاب خودت به اشتراک گذاشته می‌شود."; textSize = 15f; setPadding(0,8,0,16) }
         smsText = TextView(this).apply { text = latestSms(this@MainActivity); textSize = 14f; setPadding(12,12,12,12) }
